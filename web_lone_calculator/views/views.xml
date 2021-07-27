@@ -2,7 +2,7 @@
     <data>
 
         <template id="default_website_demo" inherit_id="website.personal-loan_f41209" active="True">
-            <xpath expr="//div[@class='form-group s_website_form_field col-12 col-lg-6 s_website_form_custom']"
+            <xpath expr="//div[hasclass('form-group s_website_form_field col-12 col-lg-6 s_website_form_custom')]"
                    position="after">
                 <div class="form-group s_website_form_field col-12 col-lg-12" data-bind="visible: table_visible"
                      style="display: none;">
@@ -30,14 +30,23 @@
                 <!-- Add your fields or attributes here -->
             </xpath>
         </template>
+        <template id="website_loan" inherit_id="website.assets_frontend" name="website_loan_calc">
+            <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript"
+                        src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
+                 <script type="text/javascript" src="/web_lone_calculator/static/src/js/calc.js"></script>
 
-        <template id="website_loan" name="website_loan_calc" inherit_id="website.assets_frontend">
-            <xpath expr="." position="inside">
-                <script type="text/javascript" src="/web_lone_calculator/static/src/js/calc.js"></script>
-                <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
-                 <link rel="stylesheet" href="/web_lone_calculator/static/src/scss/calc_style.scss"/>
+<!--                <link rel="stylesheet" href="/web_lone_calculator/static/src/scss/calc_style.scss"/>-->
             </xpath>
         </template>
+<!--        <template id="website_loan" name="website_loan_calc" inherit_id="website.assets_frontend">-->
+<!--            <xpath expr="." position="inside">-->
+<!--                <script type="text/javascript" src="/web_lone_calculator/static/src/js/calc.js"></script>-->
+<!--                <script type="text/javascript"-->
+<!--                        src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>-->
+<!--                <link rel="stylesheet" href="/web_lone_calculator/static/src/scss/calc_style.scss"/>-->
+<!--            </xpath>-->
+<!--        </template>-->
 
     </data>
 </odoo>
