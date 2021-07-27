@@ -2,9 +2,9 @@
     <data>
 
         <template id="default_website_demo" inherit_id="website.personal-loan_f41209" active="True">
-            <xpath expr="//div[hasclass('form-group s_website_form_field col-12 col-lg-6 s_website_form_custom')]"
+            <xpath expr="//div[@id='wrap']"
                    position="after">
-                <div class="form-group s_website_form_field col-12 col-lg-12" data-bind="visible: table_visible"
+                <!--<div class="form-group s_website_form_field col-12 col-lg-12" data-bind="visible: table_visible"
                      style="display: none;">
                     <div class="row">
                         <table class="tableInputs">
@@ -17,15 +17,18 @@
                             <tbody data-bind="foreach:installmentsTableTemp">
                                 <tr>
                                     <td class="tdInputs" data-bind="text:monthIndex"></td>
-                                    <!--<td class="tdInputs" data-bind="text:begin_balance"></td>-->
+                                    &lt;!&ndash;<td class="tdInputs" data-bind="text:begin_balance"></td>&ndash;&gt;
                                     <td class="tdInputs" data-bind="text:install_value"></td>
-                                    <!--<td class="tdInputs" data-bind="text:principal_value"></td>-->
-                                    <!--<td class="tdInputs" data-bind="text:interest_value"></td>-->
-                                    <!--<td class="tdInputs" data-bind="text:ending_balance"></td>-->
+                                    &lt;!&ndash;<td class="tdInputs" data-bind="text:principal_value"></td>&ndash;&gt;
+                                    &lt;!&ndash;<td class="tdInputs" data-bind="text:interest_value"></td>&ndash;&gt;
+                                    &lt;!&ndash;<td class="tdInputs" data-bind="text:ending_balance"></td>&ndash;&gt;
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                </div>-->
+                <div>
+                    Hello
                 </div>
                 <!-- Add your fields or attributes here -->
             </xpath>
