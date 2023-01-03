@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="res_partner_form_capex" model="ir.ui.view">
+            <field name="name">res partners</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="area_id"/>
+                    <field name="date"/>
+                    <field name="deal_status"/>
+                    <field name="Investments_in_millions"/>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="serial_number"/>
+                    <field name="contact_name_person"/>
+                    <field name="deal_amount"/>
+                    <field name="start_of_production"/>
+                </xpath>
+
+
+                <xpath expr="//group[@name='sale']//field[@name='user_id']" position="attributes">
+                    <attribute name="string">Relationship Manager</attribute>
+                </xpath>
+
+                <xpath expr="//group[@name='sale']//field[@name='team_id']" position="attributes">
+                    <attribute name="string">Team</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='internal_notes']" position="after">
+                    <page name="Attachment" string="Attachment">
+                        <group>
+                            <group string="TAX">
+                                <field name="tax_tax_id" widget="many2many_binary" string="TAX ID"/>
+
+
+                            </group>
+
+
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('company_type', '=', 'person')]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="crm_lead_form" model="ir.ui.view">
+            <field name="name">crm lead form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="string">Relationship Manager</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='team_id']" position="attributes">
+                    <attribute name="string">Team</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
